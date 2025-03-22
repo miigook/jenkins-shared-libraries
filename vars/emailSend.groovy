@@ -1,5 +1,5 @@
 def call(String name){
-    if (name) == 'SUCCESS'{
+    if (name == 'SUCCESS'){
         emailext attachLog: true, 
         body: "Pipeline ran successfully: ${JOB_URL}", 
         subject: "shared Library:success job  ${JOB_NAME}, build number ${BUILD_NUMBER}", 
