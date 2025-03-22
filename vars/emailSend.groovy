@@ -1,11 +1,11 @@
 def call(String name){
-    if (currentBuild.result) == 'SUCCESS'{
+    if (name) == 'SUCCESS'{
         emailext attachLog: true, 
         body: "Pipeline ran successfully: ${JOB_URL}", 
         subject: "shared Library:success job  ${JOB_NAME}, build number ${BUILD_NUMBER}", 
             to: 'abdoovahap@gmail.com'
     }
-    else if (currentBuild.result == "FAILURE"){
+    else if (name == "FAILURE"){
         emailext attachLog: true, 
         body: "Pipeline ran failedfailed ⛔️⛔️⛔️⛔️: ${JOB_URL}", 
         subject: "shared Library:failed ⛔️⛔️⛔️⛔️ job  ${JOB_NAME}, build number ${BUILD_NUMBER}", 
